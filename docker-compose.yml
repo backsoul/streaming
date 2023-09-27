@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  livego:
+    build: .
+    restart: always
+    networks:
+      - web
+    ports:
+      - 1935:1935
+      - 8090:8090
+      - 7002:7002
+    environment:
+      NODE_ENV: production
+      TZ: America/Bogota
+      VIRTUAL_HOST: streaming.backsoul.online
+      VIRTUAL_PORT: 8090
+      LETSENCRYPT_HOST: streaming.backsoul.online
+      LETSENCRYPT_EMAIL: danielsarmientoenterprise@gmail.com
+  
+networks:
+  web:
+    external: true

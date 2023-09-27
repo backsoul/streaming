@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="http://vjs.zencdn.net/6.2.0/video-js.css" rel="stylesheet" />
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  </head>
+  <body style="margin: 0px">
+    <div
+      style="
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      "
+    >
+      <h1>Streaming live video - Backsoul</h1>
+      <video
+        id="my-video"
+        class="video-js"
+        controls
+        preload="auto"
+        width="700"
+        height="500"
+        data-setup='{"techorder" : ["flash"]}'
+        style="background-color: white"
+      >
+        <source
+          src="http://127.0.0.1:7002/q8jNWaWffvS5RrGPkdWrd4kry/movie.m3u8"
+          type="application/x-mpegURL"
+        />
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to
+          a web browser that
+          <a href="http://videojs.com/html5-video-support/" target="_blank"
+            >supports HTML5 video</a
+          >
+        </p>
+      </video>
+    </div>
+
+    <script src="http://vjs.zencdn.net/6.2.0/video.js"></script>
+
+    <script>
+      // Get a reference to the video element
+      var myVideo = videojs("my-video");
+
+      // Customize the video player appearance
+      // myVideo.poster("path-to-custom-poster-image.jpg"); // Set a custom poster image
+      // myVideo.controlBar.addChild("FullscreenToggle", {}); // Add fullscreen button
+
+      // Autoplay the video when the page loads
+      myVideo.ready(function () {
+        this.play();
+      });
+    </script>
+  </body>
+</html>
